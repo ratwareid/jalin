@@ -13,12 +13,15 @@ Answer :
 3. Source Code dapat dilihat di link berikut: [Lihat Kode](https://github.com/ratwareid/jalin/blob/master/src/main/java/task/GenerateReportTask.java)
 - Silahkan configurasi driver , username , password dan nama DB
 - Buat table dengan nama 'payment' dengan struktur sebagai berikut:
+<pre>
 client_code varchar(45) PK 
 trx_date datetime 
 status varchar(45) 
 nominal decimal(10,0) 
 admin decimal(10,0) 
-trx_amount decimal(10,0)
+trx_amount decimal(10,0)	
+</pre>
+
 
 4. Source Code dapat dilihat di link berikut [Lihat Code](https://github.com/ratwareid/jalin/blob/master/src/main/java/task/SendAlertTask.java)
 5. Berikut adalah store precedurenya :
