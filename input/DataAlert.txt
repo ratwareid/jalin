@@ -1,0 +1,6 @@
+MDR;MP;1001;Bank Mandiri Online                 ;Offline
+MDR;MP;1002;Bank Mandiri Online                 ;Offline
+BCA;MP;2000;Bank BCA                            ;Offline
+BCA;MP;3000;Bank BCA                            ;Offline
+BCA;MP;4000;Bank BCA                            ;Online
+BCA;MP;5000;Bank BCA                            ;Offline

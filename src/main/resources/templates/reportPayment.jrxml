@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ListReport" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" uuid="79ab59c5-b904-4936-9671-8a64b358c7d4">
+	<import value="java.text.SimpleDateFormat"/>
+	<subDataset name="Table Dataset 1" uuid="78b28f6f-fab0-4653-bb2e-4c1d5b953439"/>
+	<parameter name="client_code" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="report_code" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * from payment_detail where client_code = '$P!{client_code}']]>
+	</queryString>
+	<field name="client_code" class="java.lang.String"/>
+	<field name="trx_date" class="java.util.Date"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="nominal" class="java.math.BigDecimal"/>
+	<field name="admin" class="java.math.BigDecimal"/>
+	<field name="trx_amount" class="java.math.BigDecimal"/>
+	<variable name="rowCount" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[1]]></variableExpression>
+	</variable>
+	<variable name="totalNominal" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{nominal}]]></variableExpression>
+	</variable>
+	<variable name="totalAdmin" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{admin}]]></variableExpression>
+	</variable>
+	<variable name="totalAmount" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{trx_amount}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement x="160" y="0" width="232" height="40" uuid="0729b7d8-4769-499b-8d7f-1b0996b3b03f"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN
+TRANSAKSI PEMBAYARAN BERHASIL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="460" y="0" width="90" height="20" uuid="fa9522b4-0232-4ed9-86c5-d57650bf8bfb"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA["Hal : " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="460" y="20" width="90" height="20" uuid="52dcbd32-acfa-4a0f-ad00-89097d21cb92"/>
+				<textFieldExpression><![CDATA["Tanggal : "+new SimpleDateFormat("ddMMyyyy").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="0" width="134" height="20" uuid="86a975c8-3cc1-4816-be3d-3493e105e62d"/>
+				<textFieldExpression><![CDATA["KODE CLIENT : "+$P{client_code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="20" width="134" height="20" uuid="af7b6159-74af-4537-995a-f8a45430a218"/>
+				<textFieldExpression><![CDATA["KODE REPORT : "+$P{report_code}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="10" y="-5" width="90" height="30" backcolor="#FFFFFF" uuid="7a9e9558-b4ef-401e-bb02-0a074c1a6885"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal 
+Transaksi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="100" y="-5" width="68" height="30" backcolor="#FFFFFF" uuid="92a60188-989c-46e9-b8a7-3baab1e8e861"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Waktu
+Transaksi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="210" y="-5" width="82" height="30" backcolor="#FFFFFF" uuid="89317f9c-f10a-47d1-8c39-d7854e7cede5"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nominal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="384" y="-5" width="101" height="30" backcolor="#FFFFFF" uuid="aa5e6df3-9fcb-44d5-92c1-e17c5c65761b"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nominal
+Transaksi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="292" y="-5" width="92" height="30" backcolor="#FFFFFF" uuid="667c8c1a-3dbb-4ff6-a1d9-03d2552b4d34"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Admin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="168" y="-5" width="42" height="30" backcolor="#FFFFFF" uuid="026ae21e-aedd-435b-90e8-27507a739baa"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="-11" width="90" height="25" uuid="bbce3936-22cb-46c8-a6ad-bc10c3aa39f8"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("ddMMyyyy").format($F{trx_date})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="-11" width="68" height="25" uuid="417a9bf5-16a4-4a84-a35d-7a5981f35417"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("HH:mm:ss").format($F{trx_date})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="168" y="-11" width="42" height="25" uuid="10ad299f-3d0d-499b-a607-8522e7693ce1"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="-11" width="82" height="25" uuid="92516c1a-eb35-4238-a69c-292506a63d34"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nominal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="292" y="-11" width="92" height="25" uuid="a426322a-c112-47f2-bd48-6f224a17364c"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{admin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="384" y="-11" width="101" height="25" uuid="db340bf6-52c2-4954-a512-6b4bfec0ab36"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{trx_amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="112">
+			<textField>
+				<reportElement x="167" y="27" width="220" height="20" uuid="65bd1ffe-74b9-47a2-8f63-daf5485cdfcf"/>
+				<textFieldExpression><![CDATA["TOTAL TRANSAKSI = "+$V{rowCount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="47" width="220" height="20" uuid="797467e3-5975-4edb-8b0a-9a03ef346598"/>
+				<textFieldExpression><![CDATA["TOTAL NOMINAL TAGIHAN = Rp."+$V{totalNominal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="67" width="220" height="20" uuid="77e78e37-792d-415d-be5d-0a44411fd69b"/>
+				<textFieldExpression><![CDATA["TOTAL ADMIN FEE = Rp."+$V{totalAdmin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="87" width="220" height="20" uuid="4ab73ef8-f142-49c6-b10e-ab15f313527d"/>
+				<textFieldExpression><![CDATA["TOTAL NOMINAL TRANSAKSI = Rp."+$V{totalAmount}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="167" y="0" width="220" height="20" uuid="f82c95cc-941e-44d0-ac18-be8fe307b1c7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[* * * SUMMARY TOTAL * * *]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
