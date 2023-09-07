@@ -75,7 +75,9 @@ BEGIN
 END
 </pre>
 
-6. Dalam gambar yang tertera terdapat sebuah class bernama ExtractData,
+6.
+<pre>
+Dalam gambar yang tertera terdapat sebuah class bernama ExtractData,
 didalamnya ada 2 variable static progProp untuk mengambil dan membaca file .properties, sedangkan Logger dipakai untuk penulisan log di console aplikasi.
 dibawahnya ada fungsi main yang akan dipanggil ketika class ini dijalankan.
 Log.info("start") akan menuliskan log dengan level info yang berisi kata start
@@ -91,3 +93,4 @@ kemudian membuat variable baru bernama rDate dan diisi nilainya dengan sDate
 lalu selanjutnya lakukan inisialisasi WriteData dan melakukan generate dari nilai rDate diatas.
 
 Semua fungsi diatas dibungkus dalam try catch, jika terjadi error maka akan ditangkap dicatch kemudian diprint diconsole dengan level error yang berisi pesan error tersebut.
+</pre>
