@@ -1,7 +1,7 @@
 # jalin
 Teknikal Test PT. Jalin Pembayaran Nusantara
 
-- Agar program dapat berjalan, diharapkan melakukan restore dari hasil backup database dari file berikut : <a href="https://github.com/ratwareid/jalin/blob/master/database/backup_db_jalin.sql"></a>
+- Agar program dapat berjalan, diharapkan melakukan restore dari hasil backup database dari file berikut : [Lihat Backup SQL]([quora.com/profile/Ashish-Kulkarni-100](https://github.com/ratwareid/jalin/blob/master/database/backup_db_jalin.sql))
 
 Answer :
 1. Hal yang paling saya kuasai adalah pemrograman java website, mulai dari dasar OOP , membuat code yang clean dan efisien. saya juga cukup mahir dalam query database , memiliki analisa dan problem solving yang baik.
@@ -10,7 +10,7 @@ Answer :
 - ketika service berjalan, saya akan query ke database untuk mencari jumlah row dengan count(id) dari table alert dimana waktu dibuat alert berkisar antara waktu sekarang - 5 menit kebelakang.
 - Jika jumlah count > 100 saya akan menjalankan fungsi untuk mengirim pesan ke telegram secara otomatis yang berisi jumlah banyak nya kegagalan yang saya dapatkan dari hasil query tadi.
 
-3. Source Code dapat dilihat di link berikut <a hrer="https://github.com/ratwareid/jalin/blob/master/src/main/java/task/GenerateReportTask.java">View Code</a>
+3. Source Code dapat dilihat di link berikut [View Code]("https://github.com/ratwareid/jalin/blob/master/src/main/java/task/GenerateReportTask.java")
 - Silahkan configurasi driver , username , password dan nama DB
 - Buat table dengan nama 'payment' dengan struktur sebagai berikut:
 client_code varchar(45) PK 
@@ -20,7 +20,7 @@ nominal decimal(10,0)
 admin decimal(10,0) 
 trx_amount decimal(10,0)
 
-4. Source Code dapat dilihat di link berikut <a hrer="https://github.com/ratwareid/jalin/blob/master/src/main/java/task/SendAlertTask.java">View Code</a>
+4. Source Code dapat dilihat di link berikut [View Code]("https://github.com/ratwareid/jalin/blob/master/src/main/java/task/SendAlertTask.java")
 5. Berikut adalah store precedurenya :
 <pre>
   CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertDataToTableC`()
