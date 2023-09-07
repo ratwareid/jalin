@@ -1,7 +1,7 @@
 # jalin
 Teknikal Test PT. Jalin Pembayaran Nusantara
 
-- Agar program dapat berjalan, diharapkan melakukan restore dari hasil backup database dari file berikut : [Lihat Backup SQL]([quora.com/profile/Ashish-Kulkarni-100](https://github.com/ratwareid/jalin/blob/master/database/backup_db_jalin.sql))
+- Agar program dapat berjalan, diharapkan melakukan restore dari hasil backup database dari file berikut : [Lihat Backup SQL](https://github.com/ratwareid/jalin/blob/master/database/backup_db_jalin.sql)
 
 Answer :
 1. Hal yang paling saya kuasai adalah pemrograman java website, mulai dari dasar OOP , membuat code yang clean dan efisien. saya juga cukup mahir dalam query database , memiliki analisa dan problem solving yang baik.
