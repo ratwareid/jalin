@@ -75,7 +75,7 @@ BEGIN
 END
 </pre>
 
-6.
+6. Berikut penjelasan dari kode yang ada digambar:
 <pre>
 Dalam gambar yang tertera terdapat sebuah class bernama ExtractData,
 didalamnya ada 2 variable static progProp untuk mengambil dan membaca file .properties, sedangkan Logger dipakai untuk penulisan log di console aplikasi.
