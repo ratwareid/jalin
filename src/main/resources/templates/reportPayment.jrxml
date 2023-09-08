@@ -8,7 +8,7 @@
 	</parameter>
 	<parameter name="report_code" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[SELECT * from payment_detail where client_code = '$P!{client_code}']]>
+		<![CDATA[SELECT * from payment where client_code = '$P!{client_code}']]>
 	</queryString>
 	<field name="client_code" class="java.lang.String"/>
 	<field name="trx_date" class="java.util.Date"/>

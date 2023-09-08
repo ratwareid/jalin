@@ -29,7 +29,8 @@ CREATE TABLE `payment` (
   `nominal` decimal(10,0) DEFAULT NULL,
   `admin` decimal(10,0) DEFAULT NULL,
   `trx_amount` decimal(10,0) DEFAULT NULL,
-  PRIMARY KEY (`client_code`)
+  `id` int NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

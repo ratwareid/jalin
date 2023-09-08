@@ -16,7 +16,7 @@ public class Main {
     public static void main(String[] args){
 
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-        String[] clientReport = {"JLN","ABC"};
+        String[] clientReport = {"JLN","BCA"};
 
         // Menjadwalkan task
         scheduler.scheduleAtFixedRate(new SendAlertTask(), 0, 1, TimeUnit.DAYS);
