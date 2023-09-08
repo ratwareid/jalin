@@ -1,7 +1,5 @@
 import task.GenerateReportTask;
 import task.SendAlertTask;
-
-import java.util.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -18,16 +16,6 @@ public class Main {
     public static void main(String[] args){
 
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-
-        // Mengatur waktu untuk menjalankan task
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, 0); // Mengatur jam eksekusi (misalnya, pukul 00:00)
-        calendar.set(Calendar.MINUTE, 0);
-        calendar.set(Calendar.SECOND, 0);
-
-        Date dailyExecutionTime = calendar.getTime();
-        long initialDelay = dailyExecutionTime.getTime() - System.currentTimeMillis();
-
         String[] clientReport = {"JLN","ABC"};
 
         // Menjadwalkan task
