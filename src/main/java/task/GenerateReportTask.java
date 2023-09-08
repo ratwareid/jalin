@@ -36,7 +36,7 @@ public class GenerateReportTask implements Runnable{
                 final String templatePath = "src/main/resources/templates/";
                 // Mengatur koneksi ke database MySQL
                 Connection connection = DriverManager.getConnection(
-                        "jdbc:postgresql://localhost:5432/report", "postgres", "postgres"
+                        "jdbc:mysql://localhost:3306/jalin", "root", "unsecure"
                 );
 
                 // Memuat laporan dari file JRXML
